@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { CreateDialogComponent } from './create-dialog/create-dialog.component'
 import { SiteComponent } from './site/site.component'
 import { CreatePlantComponent } from './plant/create/create.component'
-import { PlantsComponent } from './plants/plants.component'
+import { PlantsComponent } from './plants/plants.component';
+import { IonicModule } from '@ionic/angular'
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { PlantsComponent } from './plants/plants.component'
 	FormsModule,
 	AngularMaterialModule,
 	BrowserAnimationsModule,
+	IonicModule.forRoot(),
     ],
     providers: [],
     bootstrap: [AppComponent],
