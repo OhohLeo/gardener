@@ -7,8 +7,6 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { AngularResizeEventModule } from 'angular-resize-event'
-
 import { CreateDialogComponent } from './create-dialog/create-dialog.component'
 import { SiteComponent } from './site/site.component'
 import { CreatePlantComponent } from './plant/create/create.component'
@@ -28,7 +26,6 @@ import { PlantsComponent } from './plants/plants.component'
 	FormsModule,
 	AngularMaterialModule,
 	BrowserAnimationsModule,
-	AngularResizeEventModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

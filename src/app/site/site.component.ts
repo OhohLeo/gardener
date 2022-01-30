@@ -1,6 +1,5 @@
 import { HostListener, Component, Input, ViewChild, ElementRef, OnInit } from '@angular/core'
-import { MatToolbar } from '@angular/material/toolbar';
-import { ResizedEvent } from 'angular-resize-event'
+import { MatToolbar } from '@angular/material/toolbar'
 import { Plant } from '../plant/plant'
 import { Canvas } from './canvas'
 
@@ -38,8 +37,7 @@ export class SiteComponent implements OnInit {
 	}
     }
 
-    onResized(event: ResizedEvent): void {
-    	console.log("RESIZED", event.newRect.width, event.newRect.height)
+    @HostListener('window:resize') onResize(): void {
     	this.resizeCanvas()
     	this.redrawCanvas()
     }
@@ -48,6 +46,7 @@ export class SiteComponent implements OnInit {
 	// Reduce mat-toolbar height to fullfill whole window
 	let nativeElement = this.matToolbar._elementRef.nativeElement
 	let canvasSize = this.canvas.resize(0, nativeElement.offsetHeight)
+
 	this.canvasWidth = canvasSize[0]
 	this.canvasHeight = canvasSize[1]
     }
