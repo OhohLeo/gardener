@@ -10,7 +10,7 @@ import { Canvas } from './canvas'
     styleUrls: ['./site.component.css']
 })
 export class SiteComponent implements OnInit {
-    @Input('matToolbar') matToolbar: MatToolbar
+    @Input() matToolbar: MatToolbar
     public canvasWidth: number
     public canvasHeight: number
 

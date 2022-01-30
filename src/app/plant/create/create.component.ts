@@ -1,20 +1,17 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'create-plant',
+    selector: 'app-create-plant',
     templateUrl: './create.component.html',
     styleUrls: ['./create.component.css']
 })
-export class CreatePlantComponent implements OnInit {
+export class CreatePlantComponent {
     public name : string;
     public wateringDate: Date;
 
     @Output() enableSave = new EventEmitter<boolean>();
 
     constructor() { }
-
-    ngOnInit(): void {
-    }
 
     validate(): void {
 	if (this.name == "") {
