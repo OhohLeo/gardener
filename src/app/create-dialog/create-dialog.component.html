@@ -1,0 +1,26 @@
+<mat-dialog-content class="mat-typography">
+  <p>
+    <mat-button-toggle-group
+      #group="matButtonToggleGroup"
+      name="itemToCreate"
+      [value]="itemToCreate"
+      (change)="onItemToCreate(group.value)">
+      <mat-button-toggle value="plant">
+	<mat-icon>grass</mat-icon>Plant
+      </mat-button-toggle>
+      <mat-button-toggle value="site" [disabled]="true">
+	<mat-icon>home</mat-icon>Site
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </p>
+  <div [ngSwitch]="itemToCreate">
+    <create-plant *ngSwitchCase="'plant'" (enableSave)="onEnableSave($event)"></create-plant>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raise-button color="primary"
+	  [mat-dialog-close]="true"
+	  [disabled]="!enableSave"
+	  cdkFocusInitial>Save</button>
+</mat-dialog-actions>

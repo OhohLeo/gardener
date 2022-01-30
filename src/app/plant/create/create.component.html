@@ -1,0 +1,23 @@
+<p>
+  <mat-form-field appearance="legacy" class="form-field">
+    <mat-label>Plant name</mat-label>
+    <input matInput
+	   (input)="validate()"
+	   [(ngModel)]="name">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Last watering date</mat-label>
+    <input matInput [matDatepicker]="wateringDatePicker"
+	   (input)="validate()"
+	   [(ngModel)]="wateringDate">
+    <mat-datepicker-toggle matSuffix [for]="wateringDatePicker"></mat-datepicker-toggle>
+    <mat-datepicker #wateringDatePicker>
+      <mat-datepicker-actions>
+	<button mat-button matDatepickerCancel>Cancel</button>
+	<button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+      </mat-datepicker-actions>
+    </mat-datepicker>
+  </mat-form-field>
+</p>

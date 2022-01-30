@@ -1,0 +1,8 @@
+<mat-toolbar #matToolbar color="primary">
+  <span>Gardener</span>
+  <span class="spacer"></span>
+  <button mat-icon-button (click)="openCreateDialog()">
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-toolbar>
+<site [matToolbar]="matToolbar"></site>
